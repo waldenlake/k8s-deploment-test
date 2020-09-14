@@ -8,7 +8,7 @@ spec:
     - name: liveness-exec-container
       image: busybox:latest
       imagePullPolicy: IfNotPresent
-      command: ["/bin/bash","-c","touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 3600"]
+      command: ["/bin/sh","-c","touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 3600"]
       livenessProbe:
         exec:
           command: ["test","-e","/tmp/healthy"]
